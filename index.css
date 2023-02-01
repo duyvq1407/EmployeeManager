@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 10px;
+    background-color: whitesmoke;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #736f6f;
+}
+*::-webkit-resizer {
+    width: 4px;
+    width: 800px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background-image: url('https://st.quantrimang.com/photos/image/2019/04/24/multiplebackground-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: unset;
+}
+
+#app {
+    width: 1240px;
+    margin-top: 50px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #999;
+}
+
+#app2 {
+    width: 400px;
+    height: 400px;
+    margin-top: 50px;
+    margin-left: 10px;
+    padding: 20px 0;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px #999;
+}
+
+.form {
+    padding: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.search-form {
+    padding: 20px;
+}
+
+#employee_list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#employee_list ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    align-items: center;
+    border-bottom: 1px solid #999;
+}
+
+#employee_list ul:first-child {
+    margin-bottom: 0;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+#employee_list ul:last-child {
+    overflow-y: scroll;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    height: 350px;
+    margin-bottom: 0;
+}
+
+#employee_list ul li span,
+#employee_list ul li strong {
+    min-width: 200px;
+}
+
+#employee_list ul li span.done {
+    color: yellowgreen;
+}
+
+#employee_list ul li span.in_progress {
+    color: coral;
+}
+#employee_list ul li span.fail {
+    color: red;
+}
+
+#employee_list ul:first-child li:first-child {
+    border-bottom: 1px solid #444;
+    background-color: lightpink;
+}
+
+#employee_list ul li:last-child {
+    border-bottom: none;
+}
+
+#employee_list ul li span button {
+    height: 30px;
+    padding: 0 15px !important;
+}
+
+.title-search {
+    z-index: 1000;
+    text-align: center;
+    /* background-color: #736f6f; */
+    position: relative;
+}

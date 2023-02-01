@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Employee Manager</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <div id="app">
+            <div class="form">
+                <form action="">
+                    <div class="form-group row d-flex justify-content-between">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="title" class="me-3">Tên</label>
+                                <input type="text" id="name" class="form-control" />
+                            </div>
+                            <div class="col-6">
+                                <label for="title" class="me-3">Số CMT</label>
+                                <input type="text" id="id_number" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-4">
+                                <label for="title" class="me-3">Đơn vị</label>
+                                <input type="text" id="word_unit" class="form-control" />
+                            </div>
+                            <div class="col-4">
+                                <label for="deadline" class="me-3"
+                                    >Thời gian tham gia công ty</label
+                                >
+                                <input type="date" id="time_joining" class="form-control" />
+                            </div>
+                            <div class="col-4">
+                                <label for="type_of_employee" class="me-3">Chế độ</label>
+                                <select
+                                    class="form-select"
+                                    name="type_of_employee"
+                                    id="type_of_employee"
+                                >
+                                    <option value="thoi_vu">Nhân viên thời vụ</option>
+                                    <option value="bien_che">Nhân viên biên chế</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <label for="" class="me-3"></label>
+                            <div class="form-group btn_add">
+                                <button type="button" class="btn btn-primary">Add</button>
+                                <button
+                                    type="button"
+                                    onclick="resetInput()"
+                                    class="btn btn-outline-danger"
+                                >
+                                    Clear
+                                </button>
+                            </div>
+                            <div hidden class="form-group btn_edit">
+                                <button type="button" class="btn btn-primary">Update</button>
+                                <button type="button" class="btn btn-outline-danger">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="employee_list">
+                <ul>
+                    <li>
+                        <strong>Tên</strong>
+                        <strong>Số CMT</strong>
+                        <strong>Đơn vị</strong>
+                        <strong>Thời gian gia nhập</strong>
+                        <strong>Chế độ</strong>
+                        <strong>Hành động</strong>
+                    </li>
+                </ul>
+                <ul></ul>
+            </div>
+        </div>
+        <div id="app2">
+            <h2 class="title-search">Search</h2>
+            <div class="search-form">
+                <div>
+                    <label for="name_search" class="me-3">Tên</label>
+                    <input type="text" id="name_search" class="form-control" />
+                </div>
+                <div>
+                    <label for="id_number_search" class="me-3">Số CMT</label>
+                    <input type="text" id="id_number_search" class="form-control" />
+                </div>
+                <div class="my-3">
+                    <div class="my-3 d-flex">
+                        <div class="me-3">
+                            <label for="time_search_from">From</label>
+                            <input type="date" id="time_search_from" class="form-control" />
+                        </div>
+                        <div class="me-3">
+                            <label for="time_search_to">To</label>
+                            <input type="date" id="time_search_to" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group btn_add my-4">
+                    <button type="button" onclick="handleSearch()" class="btn btn-primary">
+                        Search
+                    </button>
+                    <button type="button" onclick="clearSearch()" class="btn btn-outline-danger">
+                        Clear
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <script src="./app.js"></script>
+    </body>
+</html>
