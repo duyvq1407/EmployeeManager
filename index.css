@@ -20,7 +20,9 @@
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: ; */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     background-image: url('https://st.quantrimang.com/photos/image/2019/04/24/multiplebackground-1.jpg');
@@ -31,18 +33,17 @@ body {
 
 #app {
     width: 1240px;
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: whitesmoke;
     border-radius: 10px;
     box-shadow: 2px 2px 2px 2px #999;
 }
 
 #app2 {
-    width: 400px;
-    height: 400px;
+    width: 1240px;
     margin-top: 50px;
     margin-left: 10px;
-    padding: 20px 0;
+    padding-top: 10px;
     background-color: whitesmoke;
     border-radius: 10px;
     box-shadow: 2px 2px 2px 2px #999;
@@ -85,6 +86,9 @@ body {
 #employee_list ul li span,
 #employee_list ul li strong {
     min-width: 200px;
+    white-space: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #employee_list ul li span.done {
@@ -117,4 +121,9 @@ body {
     text-align: center;
     /* background-color: #736f6f; */
     position: relative;
+}
+
+.btn-search {
+    text-decoration: none;
+    margin-left: 5px;
 }
