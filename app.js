@@ -51,16 +51,12 @@ function addEmployeeElement(
             .querySelector('button:first-child')
             .setAttribute(
                 'onclick',
-                `editEmployee(${
-                    index !== undefined ? index : employeeList.length
-                })`,
+                `editEmployee(${index !== undefined ? index : employeeList.length})`,
             );
-        btn_edit
-            .querySelector('button:last-child')
-            .addEventListener('click', () => {
-                resetInput();
-                resetButton();
-            });
+        btn_edit.querySelector('button:last-child').addEventListener('click', () => {
+            resetInput();
+            resetButton();
+        });
 
         resetInput(
             name_value,
@@ -126,8 +122,7 @@ function saveEmployeeList() {
             id_number: item.querySelector('.id_number').textContent,
             word_unit: item.querySelector('.word_unit').textContent,
             time_joining: item.querySelector('.time_joining').textContent,
-            type_of_employee:
-                item.querySelector('.type_of_employee').classList[1],
+            type_of_employee: item.querySelector('.type_of_employee').classList[1],
         });
     });
     localStorage.setItem('employee_list', JSON.stringify(employeeArr));
@@ -235,18 +230,19 @@ const idNumberSearch = document.querySelector('#id_number_search');
 
 function handleSearch() {
     let searchResult = [...getEmployeeInLocal()];
-
     //filter by name
     if (nameSearch.value) {
         searchResult = searchResult.filter((item) =>
-            item.name.includes(nameSearch.value),
+            removeAccents(item.name.toLowerCase()).includes(
+                removeAccents(nameSearch.value.toLowerCase()),
+            ),
         );
     }
 
     //filter by id number
     if (idNumberSearch.value) {
         searchResult = searchResult.filter((item) =>
-            item.id_number.includes(idNumberSearch.value),
+            item.id_number.toLowerCase().includes(idNumberSearch.value.toLowerCase()),
         );
     }
 
@@ -259,13 +255,9 @@ function handleSearch() {
         );
     } else if (timeSearchFrom.value || timeSearchTo.value) {
         if (timeSearchFrom.value) {
-            searchResult = searchResult.filter(
-                (item) => item.time_joining >= timeSearchFrom.value,
-            );
+            searchResult = searchResult.filter((item) => item.time_joining >= timeSearchFrom.value);
         } else {
-            searchResult = searchResult.filter(
-                (item) => item.time_joining <= timeSearchTo.value,
-            );
+            searchResult = searchResult.filter((item) => item.time_joining <= timeSearchTo.value);
         }
     }
 
@@ -289,6 +281,14 @@ function clearSearch() {
     timeSearchTo.value = '';
     idNumberSearch.value = '';
     showEmployeeList();
+}
+
+function removeAccents(str) {
+    return str
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/đ/g, 'd')
+        .replace(/Đ/g, 'D');
 }
 
 showEmployeeList();

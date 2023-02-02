@@ -25,7 +25,7 @@ body {
     /* justify-content: ; */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    background-image: url('https://st.quantrimang.com/photos/image/2019/04/24/multiplebackground-1.jpg');
+    background-image: url('https://img.freepik.com/photos-gratuite/fond-aquarelle-peint-main-forme-ciel-nuages_24972-1095.jpg?w=2000');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: unset;
@@ -42,6 +42,7 @@ body {
 #app2 {
     width: 1240px;
     margin-top: 50px;
+    margin-bottom: 50px;
     margin-left: 10px;
     padding-top: 10px;
     background-color: whitesmoke;
